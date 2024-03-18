@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex items-center justify-between px-4 py-4  border-b bg-indigo-700 sm:px-6">
+                <div class="flex items-center justify-between px-4 py-4  border-b bg-purple-500 hover:bg-purple-600 sm:px-6">
                     <h3 class="text-lg font-medium text-white">
                         Update News
                     </h3>
@@ -27,9 +27,9 @@
                     @csrf
                     @method('PUT')
 
-                    <table class="w-full text-sm text-left text-gray-600">
+                    <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                         <tbody>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News ID</th>
 
                                 <td class="px-6 py-4">
@@ -38,7 +38,7 @@
                                     </span>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News title</th>
 
                                 <td class="px-6 py-4">
@@ -50,7 +50,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News Contents</th>
 
                                 <td class="px-6 py-4">
@@ -62,7 +62,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News Image</th>
                                 <td class="px-6 py-4">
                                     <input type="file" name="newsImage" id="newsImage" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('newsImage') border-0 @enderror">
@@ -70,9 +70,7 @@
                                 </td>
                             </tr>
 
-
-
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News Date</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="newsDate" id="newsDate" placeholder="Select date" class="bg-dark-100 w-full p-4 text-black rounded-lg datepicker @error('newsDate') border-0 @enderror" value="{{ $news->news_date }}">
@@ -81,7 +79,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News Time</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="newsTime" id="newsTime" placeholder="Select time" class="bg-dark-100 w-full p-4 text-black rounded-lg timepicker @error('newsTime') border-0 @enderror" value="{{ $news->news_time}}">
@@ -90,7 +88,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <th scope="col" class="px-6 py-3">News Visibility</th>
                                 <td class="px-6 py-4">
                                     <select name="news_visibility" id="news_visibility" class="bg-dark-100 w-full p-4 text-black rounded-lg">
@@ -100,7 +98,7 @@
                                 </td>
                             </tr>
 
-                            <tr>
+                            <tr class="bg-gray-700 ">
                                 <td colspan="2" class="px-6 py-4 text-right">
                                     <button type="submit" class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600">
                                         Update

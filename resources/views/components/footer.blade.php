@@ -3,7 +3,7 @@
         <span>All rights reserved</span>
 
         <span>
-            <a href="https://github.com/Kamona-WD" target="_blank" class="text-blue-600 hover:underline">
+            <a href="https://github.com/uhrzel" target="_blank" class="text-purple-500 hover:underline">
                 @Muslim Affairs Information System
             </a>
         </span>

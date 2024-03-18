@@ -6,8 +6,8 @@
                     {{ __('Reports from Clients') }}
                 </h2>
 
-                <div class="relative pr-4"> <!-- Adjust the padding as needed -->
-                    <input type="text" id="searchInput" class="w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
+                <div class="relative">
+                    <input type="text" id="searchInput" class="w-full text-black border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-indigo-300" placeholder="Search...">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                         <i class="fas fa-search text-gray-400"></i>
                     </div>
@@ -37,12 +37,12 @@
             </form>
             @endif
         </div>
-        <div class="py-12">
+        <div class="py-1">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table class="w-full text-sm text-left">
-                            <thead class="text-xs uppercase bg-indigo-700 text-white">
+                        <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
+                            <thead class="text-xs uppercase bg-purple-500 hover:bg-purple-600 text-white">
                                 <tr>
                                     @if(auth()->user()->type === 'admin')
                                     <th scope="col" class="px-6 py-3">Report From</th>
@@ -64,8 +64,7 @@
                             </thead>
                             <tbody id="searchResults">
                                 @foreach($reports as $user)
-                                <tr class="bg-white border-b dark:bg-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-200">
-                                    @if(auth()->user()->type === 'admin')
+                                <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 "> @if(auth()->user()->type === 'admin')
                                     <td class="px-6 py-4 user-name">{{ $user->user->name }}</td>
                                     <td class="px-6 py-4 user-email">{{ $user->user->email }}</td>
                                     @endif

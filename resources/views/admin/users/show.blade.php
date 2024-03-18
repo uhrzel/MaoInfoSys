@@ -9,7 +9,7 @@
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex items-center justify-between px-4 py-4 bg-indigo-700 dark:border-gray-700 sm:px-6">
+                <div class="flex items-center justify-between px-4 py-4 bg-purple-500 hover:bg-purple-600 dark:border-gray-700 sm:px-6">
                     <h3 class="text-lg font-medium text-white">
                         {{ $user->name }}
                     </h3>
@@ -38,9 +38,9 @@
                     </div>
                 </div>
 
-                <table class="w-full text-sm text-left dark:text-gray-600">
+                <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                     <tbody>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">ID</th>
 
                             <td class="px-6 py-4">
@@ -49,21 +49,21 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Name</th>
 
                             <td class="px-6 py-4">
                                 {{ $user->name }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Email</th>
 
                             <td class="px-6 py-4">
                                 {{ $user->email }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Role</th>
 
                             <td class="px-6 py-4">
@@ -72,14 +72,14 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Created At</th>
 
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($user->created_at)) }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Updated At</th>
 
                             <td class="px-6 py-4">

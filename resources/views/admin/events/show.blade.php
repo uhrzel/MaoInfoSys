@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex items-center justify-between px-4 py-4  border-b bg-indigo-700 sm:px-6">
+                <div class="flex items-center justify-between px-4 py-4  border-b bg-purple-500 hover:bg-purple-600 sm:px-6">
                     <h3 class="text-lg font-medium text-white">
                         {{ $event->event_name }}
                     </h3>
@@ -37,9 +37,9 @@
                     </div>
                 </div>
 
-                <table class="w-full text-sm text-left text-gray-600">
+                <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                     <tbody>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">ID</th>
                             <td class="px-6 py-4">
                                 <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
@@ -47,44 +47,44 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Event Name</th>
                             <td class="px-6 py-4">
                                 {{ $event->event_name }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Event Description</th>
                             <td class="px-6 py-4">
                                 {{ $event->event_description }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Events Image</th>
                             <td class="px-6 py-4">
                                 <img src="{{ asset('storage/events_images/' .basename($event->event_image))}}" class="w-32 h-32 object-cover">
 
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Event Date</th>
                             <td class="px-6 py-4">
                                 {{ $event->event_date }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Events Time</th>
                             <td class="px-6 py-4">
                                 {{ $event->event_time }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Created At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($event->created_at)) }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Updated At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($event->updated_at)) }}

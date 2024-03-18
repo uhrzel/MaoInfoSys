@@ -6,7 +6,7 @@
                 {{ __('User Logs') }}
             </h2>
             <div class="relative pr-4"> <!-- Adjust the padding as needed -->
-                <input type="text" id="searchInput" class="w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
+                <input type="text" id="searchInput" class="text-black w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                     <i class="fas fa-search text-gray-400"></i>
                 </div>
@@ -16,12 +16,12 @@
 
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-1">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-black">
-                        <thead class="text-xs text-white uppercase bg-indigo-700 ">
+                    <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
+                        <thead class="text-xs text-white uppercase bg-purple-500 hover:bg-purple-600 ">
                             <tr>
                                 <th scope="col" class="px-6 py-3">Email</th>
                                 <th scope="col" class="px-6 py-3">Date</th>
@@ -30,7 +30,7 @@
                         </thead>
                         <tbody id="searchResults">
                             @foreach($logs as $user)
-                            <tr class="bg-white border-b0">
+                            <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                                 <td class="px-6 py-4 user-email">{{ $user->email }}</td>
                                 <td class="px-6 py-4 user-date">{{ \Carbon\Carbon::parse($user->date)->format('F j, Y') }}</td>
                                 <td class="px-6 py-4 user-logs">{{ $user->logs }}</td>

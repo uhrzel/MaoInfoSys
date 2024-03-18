@@ -4,8 +4,8 @@
             <h2 class="font-semibold text-xl text-white leading-tight w-full">
                 {{ __('News List') }}
             </h2>
-            <div class="relative pr-4"> <!-- Adjust the padding as needed -->
-                <input type="text" id="searchInput" class="w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
+            <div class="relative pr-4">
+                <input type="text" id="searchInput" class="text-black w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                     <i class="fas fa-search text-gray-400"></i>
                 </div>
@@ -18,12 +18,12 @@
         </div>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-1">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white  overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <table class="w-full text-sm text-left text-black">
-                        <thead class="text-xs text-white uppercase bg-indigo-700 ">
+                    <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
+                        <thead class="text-xs text-white uppercase bg-purple-500 hover:bg-purple-600 ">
                             <tr>
                                 <th scope="col" class="px-6 py-3">News Title</th>
                                 <th scope="col" class="px-6 py-3">News Content</th>
@@ -39,8 +39,8 @@
                         </thead>
                         <tbody id="searchResults">
                             @foreach($news as $News)
-                            <tr class="bg-white border-b dark:bg-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-200"">
-                                <td scope=" row" class="px-6 py-4 font-medium whitespace-nowrap text-black news-title">{{ $News->news_title }}</td>
+                            <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                                <td scope=" row" class="px-6 py-4 font-medium whitespace-nowrap news-title">{{ $News->news_title }}</td>
                                 <td class="px-6 py-4 news-content">{{ $News->news_content}}</td>
                                 <td class="px-6 py-4">
                                     <img src="{{ asset('storage/news_images/' . basename($News->news_image)) }}" class="max-w-full h-20 w-20">
@@ -52,7 +52,7 @@
                                     {{ \Carbon\Carbon::parse($News->news_time)->format('h:i A') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('admin.newsShow', $News->id) }}" class="w-24  inline-block bg-indigo-500 text-white rounded-full px-4 py-2 leading-none dark:hover:text-blue-200">
+                                    <a href="{{ route('admin.newsShow', $News->id) }}" class="w-24  inline-block bg-purple-500 hover:bg-purple-600  text-white rounded-full px-4 py-2 leading-none ">
                                         <i class="fas fa-eye mr-1"></i>
                                         View
                                     </a>

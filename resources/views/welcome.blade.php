@@ -297,11 +297,11 @@
             <div class="nav-links">
                 @if (Route::has('login'))
                 @auth
-                <a href="{{ url('/dashboard') }}" class="bg-yellow-400 font-bold py-2 px-10 rounded-full" style="color: #052e16;">Dashboard</a>
+                <a href="{{ url('/dashboard') }}" class="bg-purple-500 hover:bg-purple-600 ont-bold py-2 px-10 rounded-full" style="color: #052e16;">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" class="bg-yellow-400 font-bold py-2 px-10 rounded-full mr-4" style="color: #052e16;">Log in</a>
+                <a href="{{ route('login') }}" class="bg-purple-500 hover:bg-purple-600 font-bold py-2 px-10 rounded-full mr-4" style="color: #052e16;">Log in</a>
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="bg-yellow-400  font-bold py-2 px-10 rounded-full" style="color: #052e16;">Register</a>
+                <a href="{{ route('register') }}" class="bg-purple-500 hover:bg-purple-600 font-bold py-2 px-10 rounded-full" style="color: #052e16;">Register</a>
                 @endif
                 @endauth
                 @endif
@@ -313,13 +313,13 @@
         <div class="w-full grid grid-cols-12 px-12 pt-8 mb-8">
             <div class="col-span-6 flex flex-col justify-center">
                 <h1 class="title-header text-7xl font-bold text-white">
-                    <span class="text-yellow-300 desktop-title">Muslim</span>
+                    <span class="text-purple-500 desktop-title">Muslim</span>
                     <span class="text-white desktop-title">Affairs</span>
                     <span class="text-white desktop-title"> <br> Office</span>
-                    <span class="text-yellow-300 desktop-title"> Information System</span>
-                    <span class="text-yellow-300 mobile-title">Muslim</span>
+                    <span class="text-purple-500 desktop-title"> Information System</span>
+                    <span class="text-purple-500 mobile-title">Muslim</span>
                     <span class="text-white mobile-title">Affairs</span>
-                    <span class="text-yellow-300 mobile-title">InfoSys</span>
+                    <span class="text-purple-500 mobile-title">InfoSys</span>
                 </h1>
 
             </div>

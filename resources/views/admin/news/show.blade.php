@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white  overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex items-center justify-between px-4 py-4  border-b bg-indigo-700 sm:px-6">
+                <div class="flex items-center justify-between px-4 py-4  border-b bg-purple-500 hover:bg-purple-600 sm:px-6">
                     <h3 class="text-lg font-medium text-white">
                         {{ $news->news_title }}
                     </h3>
@@ -35,9 +35,9 @@
                     </div>
                 </div>
 
-                <table class="w-full text-sm text-left text-gray-600">
+                <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                     <tbody>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">ID</th>
                             <td class="px-6 py-4">
                                 <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
@@ -45,44 +45,43 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50
-                        ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">News Title</th>
                             <td class="px-6 py-4">
                                 {{ $news->news_title }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">News Content</th>
                             <td class="px-6 py-4">
                                 {{ $news->news_content }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">News Image</th>
                             <td class="px-6 py-4">
                                 <img src="{{ asset('storage/news_images/' .basename($news->news_image))}}" class="w-32 h-32 object-cover">
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">News Date</th>
                             <td class="px-6 py-4">
                                 {{ \Carbon\Carbon::parse($news->news_date   )->format('F j, Y') }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">News Time</th>
                             <td class="px-6 py-4">
                                 {{ \Carbon\Carbon::parse($news->news_time)->format('h:i A') }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Created At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($news->created_at)) }}
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 ">
+                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
                             <th scope="col" class="px-6 py-3">Updated At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($news->updated_at)) }}

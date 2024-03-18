@@ -16,6 +16,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'header_image_url' => 'https://r2.easyimg.io/zubvxe9tc/man.png',
 
     /*
     |--------------------------------------------------------------------------
@@ -193,7 +194,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Providers\RouteServiceProvider::class
 
     ],
 

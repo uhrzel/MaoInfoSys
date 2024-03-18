@@ -1,66 +1,71 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# K UI Breeze starter
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Different UI for [larave/breeze](https://github.com/laravel/breeze).
 
-## About Laravel
+[![License](https://img.shields.io/github/license/Kamona-WD/kui-laravel-breeze)](https://github.com/Kamona-WD/kui-laravel-breeze/blob/main/LICENSE.md)
+[![Releases](https://img.shields.io/github/release/Kamona-WD/kui-laravel-breeze)](https://github.com/Kamona-WD/kui-laravel-breeze/releases)
+[![Stars](https://img.shields.io/github/stars/Kamona-WD/kui-laravel-breeze)](https://github.com/Kamona-WD/kui-laravel-breeze/stargazers)
+[![Total Downloads](https://img.shields.io/packagist/dt/kamona/kui-laravel-breeze.svg)](https://packagist.org/packages/kamona/kui-laravel-breeze)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+#### [Jetstream Version](https://github.com/Kamona-WD/kui-laravel-jetstream)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- #### [Fortify Version](https://github.com/Kamona-WD/kui-laravel-fortify) -->
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Note
 
-## Learning Laravel
+We recommend installing this package on a project that you are starting from scratch.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Usage
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+> **_note_** It doesn't matter if you use `vitejs` or `laravel-mix`, it will work in both cases.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Fresh install Laravel >= 10.0 and `cd` to your app.
+2. Install laravel/breeze >= `1.18.0`
 
-## Laravel Sponsors
+```sh
+composer require laravel/breeze --dev
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# after finish run this command
 
-### Premium Partners
+php artisan breeze:install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+3. Install kamona/kui-laravel-breeze
 
-## Contributing
+```sh
+composer require kamona/kui-laravel-breeze --dev
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# for laravel/breeze < 1.18.0
+composer require kamona/kui-laravel-breeze:0.4.0 --dev
 
-## Code of Conduct
+# for laravel/breeze < 1.15.0
+composer require kamona/kui-laravel-breeze:0.3.0 --dev
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# after finish run this command
 
-## Security Vulnerabilities
+# This package will detect if your project uses vitejs or not by check if vite.config.js exist or not.
+php artisan kui-breeze:replace blade
+# available stacks (blade,vue,vue-jsx,react).
+# So if you run `php artisan breeze:install vue` you can run `php artisan kui-breeze:replace vue` and the same for react.
+# For example
+# php artisan breeze:replace blade => php artisan kui-breeze:replace blade
+# php artisan breeze:replace vue => php artisan kui-breeze:replace vue
+# php artisan breeze:replace vue => php artisan kui-breeze:replace vue-jsx
+# php artisan breeze:replace react => php artisan kui-breeze:replace react
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# then
+npm install && npm run dev # or yarn && yarn dev
+```
 
-## License
+4. Configure your database.
+5. Run `php artisan migrate`.
+6. `php artisan serve`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Navigation
+
+You will found sidebar links in:
+
+-   blade: `resources/views/components/sidebar/content.blade.php`.
+-   vue: `resources/js/Components/Sidebar/SidebarContent.vue`.
+-   vue-jsx: `resources/js/Components/Sidebar/SidebarContent.jsx`.
+-   react: `resources/js/Components/Sidebar/SidebarContent.jsx`.

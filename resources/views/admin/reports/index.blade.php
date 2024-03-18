@@ -1,42 +1,58 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <x-app-layout>
         <x-slot name="header">
-            <div class="flex">
-                <h2 class="font-semibold text-xl text-white leading-tight w-full">
-                    {{ __('Reports from Clients') }}
+            <div class="flex justify-between items-center">
+                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+                    @if(auth()->user()->type === 'admin')
+                    {{ __('Complains from Client') }}
+                    @endif
+                    @if(auth()->user()->type === 'user')
+                    {{ __('My Complains') }}
+                    @endif
                 </h2>
+                <div class="flex items-center"> <!-- Added container for alignment -->
+                    <div class="relative pr-4">
+                        <x-form.input id="searchInput" class="w-full text-black px-4 py-2 pl-10" placeholder="Search..." :withicon="true" />
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                    </div>
+                    @if(auth()->user()->type === 'user')
+                    <a href="{{ route('admin.reportCreate') }}" class="inline-flex items-center bg-blue-500 text-white rounded-full px-4 py-2 leading-none text-sm dark:hover:text-green-200">
 
-                <div class="relative">
-                    <input type="text" id="searchInput" class="w-full text-black border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-indigo-300" placeholder="Search...">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-                        <i class="fas fa-search text-gray-400"></i>
+                        <i class="fas fa-plus mr-1"></i>
+                        Create
+                    </a>
+                    @endif
+                    <div class="mr-10 flex items-center justify-end">
+                        @if(auth()->user()->type === 'admin')
+                        <x-dropdown align="left" width="32">
+                            <x-slot name="trigger">
+                                <button type="button" class="text-white bg-transparent hover:bg-purple-600 px-2 py-1 rounded-md mr-1 text-xs border border-green-500 transition duration-300">
+                                    Export <i class="fa fa-caret-down"></i>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <form method="POST" class="form-inline" id="exportForm">
+                                    <button type="submit" id="exportExcel" class="text-green-500 hover:bg-transparent px-2 py-1 rounded-md mr-1 text-xs border border-green-500 transition duration-300">
+                                        <i class="fa fa-file-excel-o"></i> Excel
+                                    </button>
+                                    <button type="submit" id="exportPdf" class="text-red-500 hover:bg-transparent px-2 py-1 rounded-md mr-1 text-xs border border-red-500 transition duration-300">
+                                        <i class="fa fa-file-pdf-o"></i> PDF
+                                    </button>
+                                    <button type="submit" id="exportWord" class="text-blue-500 hover:bg-transparent px-2 py-1 rounded-md text-xs border border-blue-500 transition duration-300">
+                                        <i class="fa fa-file-word-o"></i> Word
+                                    </button>
+                                </form>
+                            </x-slot>
+                        </x-dropdown>
+
+                        @endif
                     </div>
                 </div>
-                @if(auth()->user()->type === 'user')
-                <a href="{{ route('admin.reportCreate') }}" class="inline-flex items-center bg-blue-500 text-white rounded-full px-4 py-2 leading-none text-sm dark:hover:text-green-200">
-
-                    <i class="fas fa-plus mr-1"></i>
-                    Create
-                </a>
-
-                @endif
-            </div>
         </x-slot>
-        <div class="mt-3 mr-10 flex items-center justify-end">
-            @if(auth()->user()->type === 'admin')
-            <form method="POST" class="form-inline" id="exportForm">
-                <button type="submit" id="exportExcel" class="text-white bg-green-500 hover:bg-transparent px-2 py-1 rounded-md mr-1 text-xs border border-green-500 transition duration-300">
-                    <i class="fa fa-file-excel-o"></i> Excel
-                </button>
-                <button type="submit" id="exportPdf" class="text-white bg-red-500 hover:bg-transparent px-2 py-1 rounded-md mr-1 text-xs border border-red-500 transition duration-300">
-                    <i class="fa fa-file-pdf-o"></i> PDF
-                </button>
-                <button type="submit" id="exportWord" class="text-white bg-blue-500 hover:bg-transparent px-2 py-1 rounded-md text-xs border border-blue-500 transition duration-300">
-                    <i class="fa fa-file-word-o"></i> Word
-                </button>
-            </form>
-            @endif
-        </div>
+
+
         <div class="py-1">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -113,6 +129,7 @@
                 @if(auth()->user()->type === 'admin')
                 {{ $reports->links() }}
                 @endif
+
 
             </div>
             <!-- Updated Modal Code -->

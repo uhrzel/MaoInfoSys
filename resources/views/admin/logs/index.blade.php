@@ -1,18 +1,15 @@
 <x-app-layout>
     <x-slot name="header">
-
-        <div class="flex items-center">
-            <h2 class="font-semibold text-xl text-white leading-tight w-full">
+        <div class="flex justify-between items-center">
+            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('User Logs') }}
             </h2>
-            <div class="relative pr-4"> <!-- Adjust the padding as needed -->
-                <input type="text" id="searchInput" class="text-black w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring focus:border-blue-300" placeholder="Search...">
+            <div class="relative">
+                <x-form.input id="searchInput" class="w-full text-black px-4 py-2 pl-10" placeholder="Search..." :withicon="true" />
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3">
                     <i class="fas fa-search text-gray-400"></i>
                 </div>
             </div>
-
-        </div>
 
     </x-slot>
 

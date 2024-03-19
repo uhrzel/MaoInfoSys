@@ -3,7 +3,7 @@
         <span>All rights reserved</span>
 
         <span>
-            <a href="https://github.com/uhrzel" target="_blank" class="text-purple-500 hover:underline">
+            <a href="https://github.com/uhrzel" target="_blank" class="text-purple-500 hover:underline text-sm">
                 @Muslim Affairs Information System
             </a>
         </span>

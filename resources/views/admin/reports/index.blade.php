@@ -28,7 +28,7 @@
                         @if(auth()->user()->type === 'admin')
                         <x-dropdown align="left" width="32">
                             <x-slot name="trigger">
-                                <button type="button" class="text-white bg-transparent hover:bg-purple-600 px-2 py-1 rounded-md mr-1 text-xs border border-green-500 transition duration-300">
+                                <button type="button" class="text-gray-700 dark:text-white bg-transparent hover:bg-purple-600 px-2 py-1 rounded-md mr-1 text-xs border border-green-500 transition duration-300">
                                     Export <i class="fa fa-caret-down"></i>
                                 </button>
                             </x-slot>
@@ -81,19 +81,19 @@
                             <tbody id="searchResults">
                                 @foreach($reports as $user)
                                 <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
-
                                     @if(auth()->user()->type === 'admin')
                                     <td class="px-6 py-4 user-name">{{ $user->user->name }}</td>
                                     <td class="px-6 py-4 user-email">{{ $user->user->email }}</td>
                                     @endif
                                     <td class="px-6 py-4 user-reportTitle">{{ $user->report_title}}</td>
                                     <td class="px-6 py-4 user-reportDescription">{{ $user->report_description }}</td>
-                                    <td class="px-6 py-4 user-status"> @if($user->status === 'pending')
-                                        <span class="bg-yellow-300 text-yellow-800 px-2 py-1 rounded">{{ $user->status }}</span>
+                                    <td class="px-6 py-4 user-status">
+                                        @if($user->status === 'pending')
+                                        <span class="fas fa-exclamation-circle px-2 py-1 bg-green-600 hover:bg-purple-600 rounded-full">{{ $user->status }}</span>
                                         @elseif($user->status === 'settled')
-                                        <span class="bg-blue-300 text-blue-800 px-2 py-1 rounded">{{ $user->status }}</span>
+                                        <span class="fas fa-check-circle px-2 py-1 bg-blue-600 hover:bg-purple-600 rounded-full">{{ $user->status }}</span>
                                         @elseif($user->status === 'cancelled')
-                                        <span class="bg-red-300 text-red-800 px-2 py-1 rounded">{{ $user->status }}</span>
+                                        <span class="fas fa-times-circle px-2 py-1 bg-red-600 hover:bg-purple-600 rounded-full ">{{ $user->status }}</span>
                                         @else
                                         <span>{{ $user->status }}</span>
                                         @endif
@@ -108,16 +108,18 @@
                                     <td class="px-6 py-4 flex items-center">
                                         @if($user->status === 'pending')
                                         <div class="flex space-x-2">
-                                            <button class="feedback-btn bg-blue-500 text-white rounded-full px-4 py-2 leading-none dark:hover:text-blue-200" data-report-id="{{ $user->id }}" data-status="settled">
+                                            <button class="feedback-btn bg-transparent hover:bg-blue-600  rounded-full px-4 py-2 leading-none  border border-blue-600 transition duration-300"" data-report-id=" {{ $user->id }}" data-status="settled">
                                                 Settled
                                             </button>
-                                            <button class="feedback-btn bg-red-500 text-white rounded-full px-4 py-2 leading-none dark:hover:text-red-200" data-report-id="{{ $user->id }}" data-status="cancelled">
+                                            <button class="feedback-btn bg-transparent hover:bg-red-600  rounded-full px-4 py-2 leading-none  border border-red-500 transition duration-300"" data-report-id=" {{ $user->id }}" data-status="cancelled">
                                                 Cancel
                                             </button>
 
                                         </div>
                                         @else
-                                        <span class="text-gray-500">Completed</span>
+                                        <span class="fas fa-check-circle text-gray-500">Completed</span>
+
+
                                         @endif
                                     </td>
                                     @endif
@@ -154,7 +156,7 @@
                                     <img src="img/mess.png" alt="Icon" class="h-10 w-12">
 
                                 </div>
-                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left ">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
                                         Submit Feedback
                                     </h3>
@@ -163,7 +165,7 @@
                                             @csrf
                                             <input type="hidden" id="reportId" name="report_id">
                                             <input type="hidden" id="status" name="status">
-                                            <textarea id="feedbackMessage" name="feedback_message" rows="4" cols="50" placeholder="Enter feedback message" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                                            <textarea id="feedbackMessage" name="feedback_message" rows="4" cols="50" placeholder="Enter feedback message" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-700 "></textarea>
                                             <div class="mt-3 flex justify-center">
                                                 <button type="submit" class="inline-flex justify-center w-40 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                                     Submit Feedback

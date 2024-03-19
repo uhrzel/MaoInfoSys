@@ -18,10 +18,10 @@
                         </div>
                     </div>
                     @if(auth()->user()->type === 'user')
-                    <a href="{{ route('admin.reportCreate') }}" class="inline-flex items-center bg-blue-500 text-white rounded-full px-4 py-2 leading-none text-sm dark:hover:text-green-200">
+                    <a href="{{ route('admin.reportCreate') }}" class="button inline-flex items-center rounded-full px-4 py-2 leading-none text-sm ">
 
-                        <i class="fas fa-plus mr-1"></i>
-                        Create
+                        <i class=" fas fa-plus mr-1 text-gray-700 dark:text-white"></i>
+                        <span class="text-gray-700 dark:text-white">Create</span>
                     </a>
                     @endif
                     <div class="mr-10 flex items-center justify-end">

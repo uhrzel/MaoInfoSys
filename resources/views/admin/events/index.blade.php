@@ -12,9 +12,9 @@
                     </div>
                 </div>
 
-                <a href="{{ route('admin.eventsCreate') }}" class="inline-flex items-center bg-blue-500 text-white rounded-full px-4 py-2 leading-none text-sm dark:hover:text-green-200">
-                    <i class="fas fa-plus"></i>
-                    <span class="ml-1">Create</span>
+                <a href="{{ route('admin.eventsCreate') }}" class="button inline-flex items-center rounded-full px-4 py-2 leading-none text-sm ">
+                    <i class="fas fa-plus mr-1  text-gray-700 dark:text-white"></i>
+                    <span class="text-gray-700 dark:text-white">Create</span>
                 </a>
 
             </div>

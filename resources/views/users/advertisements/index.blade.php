@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl  text-white leading-tight">
+        <h2 class="font-semibold text-xl  text-gray-700 dark:text-white leading-tight">
             {{ __('News Feed and Events') }}
         </h2>
     </x-slot>
@@ -8,8 +8,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Display Events --}}
-            <div class="bg-blue-600 overflow-hidden shadow-sm sm:rounded-lg mb-4">
-                <div class="p-6 text-white">
+            <div class="bg-white hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 overflow-hidden shadow-sm sm:rounded-lg mb-4">
+                <div class="p-6 text-gray-700 dark:text-white">
                     <h3 class="text-lg font-semibold mb-2">Events</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         @php
@@ -42,8 +42,8 @@
                             <div>
                                 <p class="text-base font-bold event-title">{{ $event->event_name }}</p><br>
                                 <small> <strong>{{ $event->created_at->diffForHumans() }}</strong> </small><br>
-                                <p class="text-sm text-gray-300">Event Date: {{ date('F j, Y', strtotime($event->event_date)) }}</p>
-                                <p class="text-sm text-gray-300">Event Time: {{ date('g:i A', strtotime($event->event_time)) }}</p>
+                                <p class="text-sm text-gray-700 dark:text-white">Event Date: {{ date('F j, Y', strtotime($event->event_date)) }}</p>
+                                <p class="text-sm text-gray-700 dark:text-white">Event Time: {{ date('g:i A', strtotime($event->event_time)) }}</p>
 
                             </div>
                         </div>
@@ -57,8 +57,8 @@
             </div>
 
             {{-- Display News --}}
-            <div class="bg-green-600 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-white">
+            <div class="bg-white hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-700 dark:text-white">
                     <h3 class="text-lg font-semibold mb-2">News</h3>
                     @php
                     // Sort news by news_date
@@ -97,8 +97,8 @@
                             <div>
                                 <p class="text-base font-bold news-title">{{ $singleNews->news_title }}</p> <br>
                                 <small> <strong>{{ $singleNews->created_at->diffForHumans() }}</strong> </small><br>
-                                <p class="text-sm text-gray-300">News Date: {{ date('F j, Y', strtotime($singleNews->news_date)) }}</p>
-                                <p class="text-sm text-gray-300">News Time: {{ date('g:i A', strtotime($singleNews->news_time)) }}</p>
+                                <p class="text-sm text-gray-700 dark:text-white">News Date: {{ date('F j, Y', strtotime($singleNews->news_date)) }}</p>
+                                <p class="text-sm text-gray-700 dark:text-white">News Time: {{ date('g:i A', strtotime($singleNews->news_time)) }}</p>
 
                             </div>
                     </div>

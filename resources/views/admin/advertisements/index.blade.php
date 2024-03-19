@@ -11,9 +11,9 @@
                         <i class="fas fa-search text-gray-400"></i>
                     </div>
                 </div>
-                <a href="{{ route('admin.advertisementCreate') }}" class="inline-flex items-center bg-blue-500 text-white rounded-full px-4 py-2 leading-none text-sm dark:hover:text-green-200">
-                    <i class="fas fa-plus mr-1"></i>
-                    Create
+                <a href="{{ route('admin.advertisementCreate') }}" class="button inline-flex items-center rounded-full px-4 py-2 leading-none text-sm ">
+                    <i class="fas fa-plus mr-1  text-gray-700 dark:text-white"></i>
+                    <span class="text-gray-700 dark:text-white">Create</span>
                 </a>
             </div>
         </div>

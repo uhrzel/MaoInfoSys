@@ -30,22 +30,22 @@
                     @method('POST')
                     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                         <tbody>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Title</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="reportTitle" id="reportTitle" placeholder="Report Title" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('reportTitle') border-0 @enderror" value="{{ old('reportTitle') }}">
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Description</th>
                                 <td class="px-6 py-4">
                                     <textarea name="reportDescription" id="reportDescription" placeholder="Report Description" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('reportDescription') border-0 @enderror">{{ old('reportDescription') }}</textarea>
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <td colspan="2" class="px-6 py-4 text-right">
-                                    <button type="submit" class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                                        Create
+                                    <button type="submit" class="button px-4 py-2 font-semibold ">
+                                        <span class=" text-gray-700 dark:text-white">Create</span>
                                     </button>
                                 </td>
                             </tr>

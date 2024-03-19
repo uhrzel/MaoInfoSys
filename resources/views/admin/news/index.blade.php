@@ -40,7 +40,7 @@
                         </thead>
                         <tbody id="searchResults">
                             @foreach($news as $News)
-                            <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <td scope=" row" class="px-6 py-4 font-medium whitespace-nowrap news-title">{{ $News->news_title }}</td>
                                 <td class="px-6 py-4 news-content">{{ $News->news_content}}</td>
                                 <td class="px-6 py-4">
@@ -53,9 +53,9 @@
                                     {{ \Carbon\Carbon::parse($News->news_time)->format('h:i A') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('admin.newsShow', $News->id) }}" class="button w-24  inline-block text-white rounded-full px-4 py-2 leading-none ">
-                                        <i class="fas fa-eye mr-1"></i>
-                                        View
+                                    <a href="{{ route('admin.newsShow', $News->id) }}" class="button w-24  inline-block rounded-full px-4 py-2 leading-none ">
+                                        <i class="fas fa-eye mr-1 text-gray-700 dark:text-white"></i>
+                                        <span class="text-gray-700 dark:text-white">View</span>
                                     </a>
                                 </td>
                             </tr>

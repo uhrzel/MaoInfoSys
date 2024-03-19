@@ -37,7 +37,7 @@
 
                 <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                     <tbody>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">ID</th>
                             <td class="px-6 py-4">
                                 <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
@@ -45,43 +45,43 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">News Title</th>
                             <td class="px-6 py-4">
                                 {{ $news->news_title }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">News Content</th>
                             <td class="px-6 py-4">
                                 {{ $news->news_content }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">News Image</th>
                             <td class="px-6 py-4">
                                 <img src="{{ asset('storage/news_images/' .basename($news->news_image))}}" class="w-32 h-32 object-cover">
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">News Date</th>
                             <td class="px-6 py-4">
                                 {{ \Carbon\Carbon::parse($news->news_date   )->format('F j, Y') }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">News Time</th>
                             <td class="px-6 py-4">
                                 {{ \Carbon\Carbon::parse($news->news_time)->format('h:i A') }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Created At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($news->created_at)) }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Updated At</th>
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($news->updated_at)) }}

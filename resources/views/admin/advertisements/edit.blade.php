@@ -28,7 +28,7 @@
 
                     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                         <tbody>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Advertisement ID</th>
 
                                 <td class="px-6 py-4">
@@ -37,7 +37,7 @@
                                     </span>
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Advertisement title</th>
 
                                 <td class="px-6 py-4">
@@ -49,7 +49,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Ads Description</th>
 
                                 <td class="px-6 py-4">
@@ -61,23 +61,23 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Ads Image</th>
                                 <td class="px-6 py-4">
                                     <input type="file" name="adsImage" id="adsImage" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('adsImage') border-0 @enderror">
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">Ads Video</th>
                                 <td class="px-6 py-4">
                                     <input type="file" name="adsVideo" id="adsVideo" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('adsVideo') border-0 @enderror">
                                 </td>
                             </tr>
 
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <td colspan="2" class="px-6 py-4 text-right">
-                                    <button type="submit" class="button px-4 py-2 font-semibold text-white rounded">
-                                        Update
+                                    <button type="submit" class="button px-4 py-2 font-semibold rounded">
+                                        <span class="text-gray-700 dark:text-white">Update</span>
                                     </button>
                                 </td>
                             </tr>

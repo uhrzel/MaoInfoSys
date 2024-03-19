@@ -40,7 +40,7 @@
 
                 <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                     <tbody>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">ID</th>
 
                             <td class="px-6 py-4">
@@ -49,21 +49,21 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Name</th>
 
                             <td class="px-6 py-4">
                                 {{ $user->name }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Email</th>
 
                             <td class="px-6 py-4">
                                 {{ $user->email }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Role</th>
 
                             <td class="px-6 py-4">
@@ -72,14 +72,14 @@
                                 </span>
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Created At</th>
 
                             <td class="px-6 py-4">
                                 {{ date('jS M Y', strtotime($user->created_at)) }}
                             </td>
                         </tr>
-                        <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                        <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 dark:hover:bg-gray-700">
                             <th scope="col" class="px-6 py-3">Updated At</th>
 
                             <td class="px-6 py-4">

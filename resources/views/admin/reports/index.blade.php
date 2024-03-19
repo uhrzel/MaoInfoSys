@@ -80,7 +80,9 @@
                             </thead>
                             <tbody id="searchResults">
                                 @foreach($reports as $user)
-                                <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 "> @if(auth()->user()->type === 'admin')
+                                <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
+
+                                    @if(auth()->user()->type === 'admin')
                                     <td class="px-6 py-4 user-name">{{ $user->user->name }}</td>
                                     <td class="px-6 py-4 user-email">{{ $user->user->email }}</td>
                                     @endif

@@ -27,7 +27,7 @@
                         </thead>
                         <tbody id="searchResults">
                             @foreach($logs as $user)
-                            <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <td class="px-6 py-4 user-email">{{ $user->email }}</td>
                                 <td class="px-6 py-4 user-date">{{ \Carbon\Carbon::parse($user->date)->format('F j, Y') }}</td>
                                 <td class="px-6 py-4 user-logs">{{ $user->logs }}</td>

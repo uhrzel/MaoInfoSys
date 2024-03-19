@@ -41,7 +41,7 @@
                         </thead>
                         <tbody id="searchResults">
                             @foreach($advertisements as $Ads)
-                            <tr class="bg-gray-700 hover:bg-gray-800 border-b dark:border-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700">
                                 <td scope="row" class="px-6 py-4 font-medium whitespace-nowrap ads-title">{{ $Ads->ads_title }}</td>
                                 <td class="px-6 py-4 ads-description">{{ $Ads->ads_description}}</td>
                                 <td class="px-6 py-4">
@@ -55,9 +55,9 @@
                                     </video>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('admin.advertisementShow', $Ads->id) }}" class="button w-24 inline-block   text-white rounded-full px-4 py-2 leading-none ">
-                                        <i class="fas fa-eye mr-1"></i>
-                                        View
+                                    <a href="{{ route('admin.advertisementShow', $Ads->id) }}" class="button w-24 inline-block  rounded-full px-4 py-2 leading-none ">
+                                        <i class="fas fa-eye mr-1 text-gray-700 dark:text-white"></i>
+                                        <span class="text-gray-700 dark:text-white">View</span>
                                     </a>
                                 </td>
                             </tr>

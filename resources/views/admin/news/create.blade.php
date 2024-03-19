@@ -20,19 +20,19 @@
 
                     <table class="w-full text-sm text-left text-gray-800 dark:text-gray-200">
                         <tbody>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Title</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="title" id="title" placeholder="Title" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('title') border-0 @enderror" value="{{ old('title') }}">
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Content</th>
                                 <td class="px-6 py-4">
                                     <textarea name="newsContent" id="newsContent" placeholder="content" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('description') border-0 @enderror">{{ old('description') }}</textarea>
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Image</th>
                                 <td class="px-6 py-4">
                                     <input type="file" name="newsImage" id="newsImage" class="bg-dark-100 w-full p-4 text-black rounded-lg @error('newsImage') border-0 @enderror">
@@ -41,7 +41,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Date</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="newsDate" id="newsDate" placeholder="Select date" class="bg-dark-100 w-full p-4 text-black rounded-lg datepicker @error('newsDate') border-0 @enderror">
@@ -50,7 +50,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Time</th>
                                 <td class="px-6 py-4">
                                     <input type="text" name="newsTime" id="newsTime" placeholder="Select time" class="bg-dark-100 w-full p-4 text-black rounded-lg timepicker @error('newsTime') border-0 @enderror">
@@ -59,7 +59,7 @@
                                     @enderror
                                 </td>
                             </tr>
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <th scope="col" class="px-6 py-3">News Visibility</th>
                                 <td class="px-6 py-4">
                                     <select name="news_visibility" id="news_visibility" class="bg-dark-100 w-full p-4 text-black rounded-lg">
@@ -69,10 +69,10 @@
                                 </td>
                             </tr>
 
-                            <tr class="bg-gray-700 ">
+                            <tr class="bg-white hover:bg-gray-100  dark:bg-gray-800 ">
                                 <td colspan="2" class="px-6 py-4 text-right">
-                                    <button type="submit" class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                                        Create
+                                    <button type="submit" class="button px-4 py-2 font-semibold ">
+                                        <span class=" text-gray-700 dark:text-white">Create</span>
                                     </button>
                                 </td>
                             </tr>

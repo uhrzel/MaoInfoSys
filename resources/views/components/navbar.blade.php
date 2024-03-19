@@ -20,7 +20,7 @@
 
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
-                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:bg-purple-600 focus:outline-none transition ease-in-out duration-150">
+                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md  hover:bg-purple-600 focus:outline-none transition ease-in-out duration-150">
                     <img class="h-6 w-6 rounded-full mr-1" src="{{ asset('img/man.png') }}" alt="{{ Auth::user()->name }}">
                     <div>{{ Auth::user()->name }}</div>
 

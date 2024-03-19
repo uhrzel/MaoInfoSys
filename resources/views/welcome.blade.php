@@ -12,10 +12,44 @@
 
 
     <style>
-        .bg-green-fullscreen {
-            background-color: #052e16;
-            width: 100%;
+        .button {
+            padding: 0.8em 1.8em;
+            border: 2px solid #805AD5;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: .3s;
+            z-index: 1;
+            font-family: inherit;
+            color: #805AD5;
         }
+
+        .button::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: #805AD5;
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .button:hover::before {
+            width: 105%;
+        }
+
+        .button:hover {
+            color: #805AD5;
+        }
+
+
 
         .drop-shadow-lg {
             filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.1));
@@ -50,7 +84,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: yellow;
+            background-color: #805AD5;
             /* Adjust color as needed */
             transform: scaleX(0);
             transform-origin: bottom right;
@@ -74,7 +108,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: yellow;
+            background-color: #805AD5;
 
             transform: scaleX(0);
             transform-origin: bottom right;
@@ -99,7 +133,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: orange;
+            background-color: #805AD5;
             /* Adjust color as needed */
             transform: scaleX(0);
             transform-origin: bottom right;
@@ -123,7 +157,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: orange;
+            background-color: #805AD5;
             /* Adjust color as needed */
             transform: scaleX(0);
             transform-origin: bottom right;
@@ -147,7 +181,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: orange;
+            background-color: #805AD5;
             /* Adjust color as needed */
             transform: scaleX(0);
             transform-origin: bottom right;
@@ -168,7 +202,7 @@
 
         /* Add this CSS if you want to change the color on hover */
         .social-icon:hover svg {
-            fill: orange;
+            fill: #805AD5;
             /* Adjust the color as needed */
             transition: fill 0.3s ease-in-out;
         }
@@ -258,7 +292,7 @@
     </style>
 </head>
 
-<body class="bg-green-fullscreen">
+<body class="bg-green-fullscreen bg-gray-900">
 
     <nav class="flex items-center justify-between flex-wrap bg-transparent p-6">
         <div class="flex gap-4 items-center flex-shrink-0 text-white mr-6">
@@ -297,11 +331,11 @@
             <div class="nav-links">
                 @if (Route::has('login'))
                 @auth
-                <a href="{{ url('/dashboard') }}" class="bg-purple-500 hover:bg-purple-600 ont-bold py-2 px-10 rounded-full" style="color: #052e16;">Dashboard</a>
+                <a href="{{ url('/dashboard') }}" class="button font-bold py-2 px-10 rounded-full" style="color: #fff;">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" class="bg-purple-500 hover:bg-purple-600 font-bold py-2 px-10 rounded-full mr-4" style="color: #052e16;">Log in</a>
+                <a href="{{ route('login') }}" class="button font-bold py-2 px-10 rounded-full mr-4" style="color: #fff;">Log in</a>
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="bg-purple-500 hover:bg-purple-600 font-bold py-2 px-10 rounded-full" style="color: #052e16;">Register</a>
+                <a href="{{ route('register') }}" class="button font-bold py-2 px-10 rounded-full" style="color: #fff;">Register</a>
                 @endif
                 @endauth
                 @endif
@@ -324,7 +358,7 @@
 
             </div>
             <div class="man-icon col-span-6 mb-8">
-                <img src="img/man.png" alt="Picture of a man" class="w-96 object-cover mx-auto drop-shadow-lg">
+                <img src="img/logo7.png" alt="Picture of a man" class="w-96 object-cover mx-auto drop-shadow-lg">
             </div>
         </div>
         <!-- Modal -->

@@ -80,9 +80,8 @@
                                 </td>
                             </tr>
                             <tr class="bg-gray-700  ">
-
                                 <td colspan="2" class="px-6 py-4 text-right">
-                                    <button type="submit" class="px-4 py-2 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+                                    <button type="submit" class="button px-4 py-2 font-semibold text-white rounded">
                                         Update
                                     </button>
                                 </td>

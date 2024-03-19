@@ -12,6 +12,7 @@
             </div>
         </div>
     </x-slot>
+
     <div class="">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -37,7 +38,7 @@
                                     {{ \Carbon\Carbon::parse($user->created_at)->format('h:i A') }}
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('admin.userShow', $user->id) }}" class="inline-flex items-center bg-purple-500 text-white rounded-full px-4 py-2 leading-none hover:bg-purple-600 ">
+                                    <a href="{{ route('admin.userShow', $user->id) }}" class="button inline-flex items-center text-white rounded-full px-4 py-2 leading-none hover:bg-purple-600 ">
                                         <i class="fas fa-eye mr-1"></i>
                                         View
                                     </a>

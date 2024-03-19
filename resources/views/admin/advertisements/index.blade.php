@@ -55,7 +55,7 @@
                                     </video>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="{{ route('admin.advertisementShow', $Ads->id) }}" class="w-24 inline-block bg-purple-500 hover:bg-purple-600  text-white rounded-full px-4 py-2 leading-none ">
+                                    <a href="{{ route('admin.advertisementShow', $Ads->id) }}" class="button w-24 inline-block   text-white rounded-full px-4 py-2 leading-none ">
                                         <i class="fas fa-eye mr-1"></i>
                                         View
                                     </a>

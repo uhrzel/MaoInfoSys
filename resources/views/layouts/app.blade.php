@@ -29,6 +29,38 @@
         [x-cloak] {
             display: none;
         }
+
+        .button {
+            border: 2px solid #805AD5;
+            position: relative;
+            overflow: hidden;
+            background-color: transparent;
+            transition: .3s;
+            z-index: 1;
+            color: white;
+        }
+
+        .button::before {
+            content: '';
+            width: 0;
+            height: 300%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: #805AD5;
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+        }
+
+        .button:hover::before {
+            width: 105%;
+        }
+
+        .button:hover {
+            color: white;
+        }
     </style>
 
     <!-- Scripts -->

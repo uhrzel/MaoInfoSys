@@ -1,4 +1,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <x-app-layout>
         <x-slot name="header">
             <div class="flex justify-between items-center">
@@ -187,7 +190,6 @@
             <div id="confirmationModalExcel" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                 <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
                     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="document">
                         <!-- Modal content -->
                         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -195,10 +197,15 @@
                                 <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
                                     <img src="img/excel.png" alt="Icon" class="h-6 w-12">
                                 </div>
+
                                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
                                         Export Confirmation
                                     </h3>
+                                    <div class="mt-2">
+                                        <label for="dateRangeExcell" class="block text-sm font-medium text-gray-700">Select Date Range:</label>
+                                        <input type="text" id="dateRangeExcell" name="dateRangeExcell" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 text-gray-700 rounded-md">
+                                    </div>
                                     <div class="mt-2">
                                         <p class="text-sm text-gray-500">
                                             Do you want to export this report as Excel?
@@ -221,7 +228,6 @@
             <div id="confirmationModalPdf" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                 <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
                     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="document">
                         <!-- Modal content -->
                         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -233,6 +239,10 @@
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
                                         Export Confirmation
                                     </h3>
+                                    <div class="mt-2">
+                                        <label for="dateRangePdf" class="block text-sm font-medium text-gray-700">Select Date Range:</label>
+                                        <input type="text" id="dateRangePdf" name="dateRangePdf" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 text-gray-700 rounded-md">
+                                    </div>
                                     <div class="mt-2">
                                         <p class="text-sm text-gray-500">
                                             Do you want to export this report as PDF?
@@ -267,6 +277,10 @@
                                     <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
                                         Export Confirmation
                                     </h3>
+                                    <div class="mt-2">
+                                        <label for="dateRangeWord" class="block text-sm font-medium text-gray-700">Select Date Range:</label>
+                                        <input type="text" id="dateRangeWord" name="dateRangeWord" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 text-gray-700 rounded-md">
+                                    </div>
                                     <div class="mt-2">
                                         <p class="text-sm text-gray-500">
                                             Do you want to export this report as Word?
@@ -315,18 +329,21 @@
                 });
             });
 
+            flatpickr("#dateRangeExcell", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+            });
+            flatpickr("#dateRangePdf", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+            });
+            flatpickr("#dateRangeWord", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+            });
+
+
             //excel
-
-            function showModal3() {
-                document.getElementById('confirmationModalExcel').classList.remove('hidden');
-                document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden');
-            }
-
-            // Function to close the modal
-            function closeModal3() {
-                document.getElementById('confirmationModalExcel').classList.add('hidden');
-                document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden');
-            }
 
             // Handle click event on the "Export PDF" button to show the modal
             document.getElementById('exportExcel').addEventListener('click', function(e) {
@@ -336,9 +353,26 @@
 
             // Handle click event on the "Export" button in the modal to proceed with export
             document.getElementById('exportButton3').addEventListener('click', function() {
-                window.location.href = "{{ route('export.excel') }}";
+                // Retrieve the selected date range
+                const dateRangeExcell = document.getElementById('dateRangeExcell').value;
+
+                // Close the modal
                 closeModal3();
+
+                // Redirect to the export route with the selected date range as a query parameter
+                window.location.href = "{{ route('export.excel') }}" + "?dateRangeExcell=" + encodeURIComponent(dateRangeExcell);
             });
+
+            function showModal3() {
+                document.getElementById('confirmationModalExcel').classList.remove('hidden');
+                document.getElementsByTagName('html')[0].classList.add('overflow-y-hidden');
+            }
+
+            function closeModal3() {
+                document.getElementById('confirmationModalExcel').classList.add('hidden');
+                document.getElementsByTagName('html')[0].classList.remove('overflow-y-hidden');
+            }
+
 
             //pdf
 
@@ -361,8 +395,11 @@
 
             // Handle click event on the "Export" button in the modal to proceed with export
             document.getElementById('exportButton1').addEventListener('click', function() {
-                window.location.href = "{{ route('export.pdf') }}";
+
+                const dateRangePdf = document.getElementById('dateRangePdf').value;
                 closeModal1();
+                window.location.href = "{{ route('export.pdf') }}" + "?dateRangePdf=" + encodeURIComponent(dateRangePdf);
+
             });
 
             //word
@@ -386,7 +423,9 @@
 
             // Handle click event on the "Export" button in the modal to proceed with export
             document.getElementById('exportButton2').addEventListener('click', function() {
-                window.location.href = "{{ route('export.word') }}";
+                const dateRangeWord = document.getElementById('dateRangeWord').value;
+
+                window.location.href = "{{ route('export.word') }}" + "?dateRangeWord=" + encodeURIComponent(dateRangeWord);
                 closeModal2();
             });
 

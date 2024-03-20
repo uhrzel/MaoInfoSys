@@ -11,21 +11,37 @@ use PhpOffice\PhpWord\Settings;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use Illuminate\Support\Collection;
-
 use TCPDF;
 
 class ExportController extends Controller
 {
-    public function excel()
+    public function excel(Request $request)
     {
-        // Fetch reports from the database along with user information
-        $reports = Report::with('user')->get();
 
-        // Create a new Spreadsheet object
+        $dateRangeExcell = $request->input('dateRangeExcell');
+
+
+        if ($dateRangeExcell) {
+
+            [$startDate, $endDate] = explode(' to ', $dateRangeExcell);
+
+
+            $endDate = date('Y-m-d', strtotime($endDate . ' +1 day'));
+
+
+            $reports = Report::with('user')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->get();
+        } else {
+
+            $reports = Report::with('user')->get();
+        }
+
+
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
-        // Add headers
+
         $sheet->setCellValue('A1', 'User Name');
         $sheet->setCellValue('B1', 'User Email');
         $sheet->setCellValue('C1', 'Report Title');
@@ -33,7 +49,7 @@ class ExportController extends Controller
         $sheet->setCellValue('E1', 'Status');
         $sheet->setCellValue('F1', 'Created At');
 
-        // Add data from the reports
+
         $row = 2;
         foreach ($reports as $report) {
             $sheet->setCellValue('A' . $row, $report->user->name);
@@ -45,25 +61,42 @@ class ExportController extends Controller
             $row++;
         }
 
-        // Create a new Excel writer object
+
         $writer = new Xlsx($spreadsheet);
 
-        // Set headers for download
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="reports.xlsx"');
         header('Cache-Control: max-age=0');
 
-        // Write the spreadsheet to the response
+
         $writer->save('php://output');
     }
 
 
-    public function pdf()
-    {
-        // Fetch reports from the database along with user information
-        $reports = Report::with('user')->get();
 
-        // Create new PDF document
+    public function pdf(Request $request)
+    {
+
+        $dateRange = $request->input('dateRangePdf');
+
+
+        if ($dateRange) {
+
+            [$startDate, $endDate] = explode(' to ', $dateRange);
+
+
+            $endDate = date('Y-m-d', strtotime($endDate . ' +1 day'));
+
+
+            $reports = Report::with('user')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->get();
+        } else {
+
+            $reports = Report::with('user')->get();
+        }
+
+
         $pdf = new TCPDF();
 
         // Set document information
@@ -72,16 +105,16 @@ class ExportController extends Controller
         $pdf->SetTitle('Reports PDF');
         $pdf->SetSubject('Reports PDF');
 
-        // Add a page
+
         $pdf->AddPage();
 
-        // Start building the HTML content for the PDF
+
         $html = '<h1>Reports</h1>';
         $html .= '<table class="table">';
         $html .= '<thead><tr><th>User Name</th><th>User Email</th><th>Report Title</th><th>Report Description</th><th>Status</th><th>Created At</th></tr></thead>';
         $html .= '<tbody>';
 
-        // Loop through each report and add it to the HTML content
+
         foreach ($reports as $report) {
             $html .= '<tr>';
             $html .= '<td>' . $report->user->name . '</td>';
@@ -94,24 +127,39 @@ class ExportController extends Controller
         }
 
         $html .= '</tbody></table>';
-
-        // Output the HTML content to the PDF
         $pdf->writeHTML($html);
 
-        // Close and output PDF
+
         $pdfContent = $pdf->Output('reports.pdf', 'S');
 
-        // Return the PDF as a response
         return response($pdfContent)
             ->header('Content-Type', 'application/pdf')
             ->header('Content-Disposition', 'attachment; filename="reports.pdf"');
     }
-    public function word()
-    {
-        // Fetch reports from the database along with user information
-        $reports = Report::with('user')->get();
 
-        // Create a new PhpWord object
+    public function word(Request $request)
+    {
+
+        $dateRange = $request->input('dateRangeWord');
+
+
+        if ($dateRange) {
+
+            [$startDate, $endDate] = explode(' to ', $dateRange);
+
+
+            $endDate = date('Y-m-d', strtotime($endDate . ' +1 day'));
+
+
+            $reports = Report::with('user')
+                ->whereBetween('created_at', [$startDate, $endDate])
+                ->get();
+        } else {
+
+            $reports = Report::with('user')->get();
+        }
+
+
         $phpWord = new PhpWord();
 
         // Set document properties
@@ -121,10 +169,10 @@ class ExportController extends Controller
         $phpWord->getDocInfo()->setDescription('Reports exported as Word document');
         $phpWord->getDocInfo()->setSubject('Reports');
 
-        // Add a section
+
         $section = $phpWord->addSection();
 
-        // Add a title
+
         $section->addTitle('Reports', 1);
 
         // Add a table
@@ -147,11 +195,11 @@ class ExportController extends Controller
             $table->addCell()->addText($report->created_at);
         }
 
-        // Save the document
+
         $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
         $objWriter->save(storage_path('app/reports.docx'));
 
-        // Download the document
+
         return response()->download(storage_path('app/reports.docx'));
     }
 }

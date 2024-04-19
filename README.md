@@ -58,21 +58,21 @@ The researchers have created an Information System to meet these needs, providin
   <tr>
     <td align="center">
       <b>Introduction</b><br>
-      <img src="public/img/capstone2/landing page/title.png" height="200">
+      <img src="public/img/capstone2/landing page/title.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Public News</b><br>
-      <img src="public/img/capstone2/landing page/news.png" height="200">
+      <img src="public/img/capstone2/landing page/news.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Public Events</b><br>
-      <img src="public/img/capstone2/landing page/events.png" height="200">
+      <img src="public/img/capstone2/landing page/events.png" height="200" width="750">
     </td>
   </tr>
   <tr>
     <td align="center">
       <b>Footer</b><br>
-      <img src="public/img/capstone2/landing page/footer.png" height="200">
+      <img src="public/img/capstone2/landing page/footer.png" height="200" width="750">
     </td>
    
   </tr>
@@ -86,53 +86,53 @@ The researchers have created an Information System to meet these needs, providin
   <tr>
     <td align="center">
       <b>Login</b><br>
-      <img src="public/img/capstone2/login.png" height="200">
+      <img src="public/img/capstone2/login.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Register</b><br>
-      <img src="public/img/capstone2/register.png" height="200">
+      <img src="public/img/capstone2/register.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Users</b><br>
-      <img src="public/img/capstone2/admin/dashboard.png" height="200">
+      <img src="public/img/capstone2/admin/dashboard.png" height="200" width="750">
     </td>
     </tr>
    <tr>
     <td align="center">
       <b>Messenger</b><br>
-      <img src="public/img/capstone2/admin/dashboard.png" height="200">
+      <img src="public/img/capstone2/admin/dashboard.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Complains</b><br>
-      <img src="public/img/capstone2/admin/messenger.png" height="200">
+      <img src="public/img/capstone2/admin/messenger.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Advertisements</b><br>
-      <img src="public/img/capstone2/admin/ads.png" height="200">
+      <img src="public/img/capstone2/admin/ads.png" height="200" width="750">
     </td>
     </tr>
     <tr>
        <td align="center">
       <b>Events</b><br>
-      <img src="public/img/capstone2/admin/events.png" height="200">
+      <img src="public/img/capstone2/admin/events.png" height="200" width="750">
     </td>
        <td align="center">
       <b>News</b><br>
-      <img src="public/img/capstone2/admin/news.png" height="200">
+      <img src="public/img/capstone2/admin/news.png" height="200" width="750">
     </td>
        <td align="center">
       <b>Statistics</b><br>
-      <img src="public/img/capstone2/admin/stats.png" height="200">
+      <img src="public/img/capstone2/admin/stats.png" height="200" width="750">
     </td>
     </tr>
     <tr>
        <td align="center">
       <b>User Logs</b><br>
-      <img src="public/img/capstone2/admin/logs.png" height="200">
+      <img src="public/img/capstone2/admin/logs.png" height="200" width="750">
     </td>
      <td align="center">
       <b>Admin Profile</b><br>
-      <img src="public/img/capstone2/admin/profile.png" height="200">
+      <img src="public/img/capstone2/admin/profile.png" height="200" width="750">
     </td>
     </tr>
 </table>
@@ -145,29 +145,29 @@ The researchers have created an Information System to meet these needs, providin
   <tr>
     <td align="center">
       <b>Login</b><br>
-      <img src="public/img/capstone2/login.png" height="200">
+      <img src="public/img/capstone2/login.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Register</b><br>
-      <img src="public/img/capstone2/register.png" height="200">
+      <img src="public/img/capstone2/register.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Private News and Events</b><br>
-      <img src="public/img/capstone2/client/dashboard news events.png" height="200">
+      <img src="public/img/capstone2/client/dashboard news events.png" height="200" width="750">
     </td>
   </tr>
   <tr>
     <td align="center">
       <b>Messenger</b><br>
-      <img src="public/img/capstone2/client/messenger.png" height="200">
+      <img src="public/img/capstone2/client/messenger.png" height="200" width="750">
     </td>
     <td align="center">
       <b>Complains</b><br>
-      <img src="public/img/capstone2/client/complains.png" height="200">
+      <img src="public/img/capstone2/client/complains.png" height="200" width="750">
     </td>
      <td align="center">
       <b>Client Profle</b><br>
-      <img src="public/img/capstone2/client/profile.png" height="200">
+      <img src="public/img/capstone2/client/profile.png" height="200" width="750">
     </td>
   </tr>
 </table>

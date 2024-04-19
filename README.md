@@ -86,7 +86,7 @@ The researchers have created an Information System to meet these needs, providin
   <tr>
     <td align="center">
       <b>Login</b><br>
-      <img src="public/img/capstone2/login.png height="200">
+      <img src="public/img/capstone2/login.png" height="200">
     </td>
     <td align="center">
       <b>Register</b><br>
@@ -114,7 +114,7 @@ The researchers have created an Information System to meet these needs, providin
     <tr>
        <td align="center">
       <b>Events</b><br>
-      <img src="public/img/capstone2/admin/events.pngg" height="200">
+      <img src="public/img/capstone2/admin/events.png" height="200">
     </td>
        <td align="center">
       <b>News</b><br>

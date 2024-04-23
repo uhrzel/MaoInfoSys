@@ -14,7 +14,7 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "munafio/chatify": "^1.6",
+        "munafio/chatify": "^1.6.0",
         "tecnickcom/tcpdf": "^6.6",
         "phpoffice/phpspreadsheet": "^1.17",
         "phpoffice/phpword": "^1.2"
